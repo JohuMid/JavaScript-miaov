@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动生成一组新闻</title>
+    <script>
+        window.onload = function() {
+            var oBtn = document.getElementById('btn1');
+            var oUI = document.getElementById('list');
+
+            var arr = [
+                '《巡视利剑》第四集《巡视全覆盖》  喜迎十九大',
+                '张德江出席开幕式并致辞  俞正声出席会议',
+                '刘云山发表讲话  张高丽会见哈萨克斯坦副总理',
+                '安理会通过对朝鲜核试验制裁决议 限制对朝石油运输',
+                '媒体：中国敲定的大动作 会改变南亚的格局吗？'];
+
+            var onOff = true;
+
+            oBtn.onclick = function(){
+                //1.oBtn.disabled = true;屏蔽按钮
+                //2.oBtn.style.display='none';清除按钮
+                //3.oUI.innerHTML='';清空内容
+                //4.判断
+
+                if(onOff) {
+
+                    for (var i = 0; i < arr.length; i++) {
+                        oUI.innerHTML += '<li>' + arr[i] + '</li>';
+                    }
+                    onOff = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="自动生成5条新闻">
+<ul id="list"></ul>
+</body>
+</html>

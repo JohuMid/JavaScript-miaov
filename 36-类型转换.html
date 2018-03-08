@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换</title>
+    <script>
+
+        var a='+100';
+        //alert(a+100);=>'100100'
+        //alert(Number(a));=>'100'
+
+        var a1='';
+        //alert(Number(a1));=>'0'
+
+        var a2=false;
+        //alert(Number(a2));=>true-1;false-0
+
+        var a4 = null;
+        //alert(Number(a4));
+
+        var a3 = function () {alert(1);};
+        //alert(Number(a3)); =>NaN
+
+        //空数组转换为0
+
+///////////////////////////////////////////////////////////
+        var json={abc:123};
+        //alert(Number(json));=>json不能转为number
+
+        //不能转换未定义的变量,非数字变量
+
+
+        var b='100.5515';
+        alert(parseInt(b));//只转其他字符前的数字
+        alert(parseFloat(b,2));//浮点型变量,二进制
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this应用</title>
+    <style>
+
+        .down,.up{
+            width: 400px;
+            height: 80px;
+            background-color: tomato;
+
+        }
+        .down>ul>li,.up>ul>li{
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            background-color: grey;
+            float: left;
+            margin:10px;
+
+        }
+        .down>ul>li:nth-child(1),.up>ul>li:nth-child(1){
+            margin-left: -30px;
+        }
+        .down>ul>li>div,.up>ul>li>div{
+            width: 180px;
+            height: 120px;
+            background-color: #cccccc;
+            display: none;
+            position: absolute;
+            z-index: 100;
+            opacity: 0.7;
+            margin-top: 30px;
+            margin-left: 30px;
+
+
+        }
+        .down>ul>li:hover,.up>ul>li:hover{
+            display: block;
+            animation: move 1.5s linear 0s infinite;
+        }
+        /*li:hover div{*/
+            /*display: block;*/
+        /*}*/
+        @keyframes move {
+            0%{
+
+                color: #ff0000;
+            }
+            25%{
+                color: tomato;
+
+            }
+            50%{
+                color: #ffc021;
+            }
+            75%{
+                color: #5aff76;
+            }
+            100%{
+                opacity: 1;
+                color: #ff0000;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            var aLi = document.getElementsByTagName('li');
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onmouseover = function() {
+                    this.getElementsByTagName('div')[0].style.display = 'block';
+                };
+                aLi[i].onmouseout = function() {
+                    this.getElementsByTagName('div')[0].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="up">
+    <ul>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+    </ul>
+</div>
+
+<div class="down">
+    <ul>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+        <li><div>老子是文本老子是文本老子是文本老子是文本老子是文本老子是文本</div></li>
+    </ul>
+</div>
+</body>
+</html>

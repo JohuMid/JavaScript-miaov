@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图集</title>
+</head>
+<style>
+    body{
+        background: url("images/5.jpg") no-repeat;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    .picture{
+        width: 700px;
+        height: 400px;
+        margin: 0 auto;
+        margin-top: 200px;
+    }
+    #left,#right{
+        width: 40px;
+        height: 40px;
+        margin-top: -225px;
+        position: absolute;
+        z-index: 100;
+        opacity: 0.5;
+    }
+    #left:hover,#right:hover{
+        opacity: 1;
+    }
+    #left{
+        position: relative;
+        float: left;
+    }
+    #right{
+        position: relative;
+        float: right;
+    }
+    .middle{
+        width: 600px;
+        height: 80px;
+        margin: 0 auto;
+        margin-top: -60px;
+    }
+    .middle>img{
+        height: 80px;
+        margin: 0 auto;
+        margin-top: -10px;
+        display: none;
+    }
+    .down{
+        width: 300px;
+        height: 60px;
+        margin: 0 auto;
+    }
+    .down>ul>li{
+        float: left;
+        margin-left: 20px;
+        list-style: none;
+    }
+    .down>ul>li>img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .down>ul>li>img:hover{
+        width: 40px;
+        height: 40px;
+        animation: move 0.5s normal;
+    }
+    @keyframes move {
+        from{
+            width: 30px;
+            height: 30px;
+        }
+        to {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    #photo{
+        width: 700px;
+        height: 400px;
+        z-index: -1;
+    }
+    #btn1,#btn2{
+        width: 100px;
+        height: 30px;
+        background: #5aff76;
+        border-radius: 15%;
+        margin:0 auto;
+    }
+
+</style>
+<script>
+    window.onload= function(){
+        var arrUrl = ['images/6.jpg','images/7.jpg','images/8.jpg','images/9.jpg'];
+        var num = 1;
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var oPhoto = document.getElementById('photo');
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var oLi1 = document.getElementsByTagName('li')[0];
+        var oLi2 = document.getElementsByTagName('li')[1];
+        var oLi3 = document.getElementsByTagName('li')[2];
+        var oLi4 = document.getElementsByTagName('li')[3];
+        var oImg1 = document.getElementById('img1');
+        var oImg2 = document.getElementById('img2');
+        var oImg3 = document.getElementById('img3');
+        var oImg4 = document.getElementById('img4');
+
+        var cir = 0;
+        var cil = 0;
+
+        oRight.onclick=function(){
+            num++;
+            if (num == arrUrl.length) {
+                num = cil;
+            }
+            oPhoto.src = arrUrl[num];
+        };
+        oLeft.onclick=function(){
+            num--;
+            if(num == -1) {
+                num = cir;
+            }
+            oPhoto.src = arrUrl[num];
+        };
+        oBtn1.onclick=function(){
+            cil=0;
+            cir=3;
+        };
+        oBtn2.onclick=function(){
+            cil=3;
+            cir=0;
+        };
+
+        oLi1.onclick=function(){
+            oPhoto.src = arrUrl[0];
+        };
+        oLi2.onclick=function(){
+            oPhoto.src = arrUrl[1];
+        };
+        oLi3.onclick=function(){
+            oPhoto.src = arrUrl[2];
+        };
+        oLi4.onclick=function(){
+            oPhoto.src = arrUrl[3];
+        };
+
+    }
+</script>
+<body>
+<div>
+    <div  class="picture">
+        <div><img id="photo" src="images/6.jpg" alt=""></div>
+        <img id="left" src="images/left.png" alt="">
+        <img id="right" src="images/right.png" alt="">
+    </div>
+    <div class="middle">
+        <img src="images/6.jpg" id="img1">
+        <img src="images/7.jpg" id="img2">
+        <img src="images/8.jpg" id="img3">
+        <img src="images/9.jpg" id="img4">
+    </div>
+    <div class="down">
+        <ul>
+            <li><img src="images/dian.png" onmouseover="document.getElementById('img1').style.display='block';" onmouseout="document.getElementById('img1').style.display='none';"></li>
+            <li><img src="images/dian.png" onmouseover="document.getElementById('img2').style.display='block';" onmouseout="document.getElementById('img2').style.display='none';"></li>
+            <li><img src="images/dian.png" onmouseover="document.getElementById('img3').style.display='block';" onmouseout="document.getElementById('img3').style.display='none';"></li>
+            <li><img src="images/dian.png" onmouseover="document.getElementById('img4').style.display='block';" onmouseout="document.getElementById('img4').style.display='none';"></li>
+        </ul>
+    </div>
+    <div>
+        <button id="btn1" value="循环播放">循环播放</button>
+        <button id="btn2" value="列表播放">列表播放</button>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片判断</title>
+</head>
+<body>
+<img id="img1" src="images/1.jpg" alt="">
+<script>
+    var oImg=document.getElementById('img1');
+    var onOff=true;
+    //开关：布尔值 true和false
+    //创造一个开关
+
+    oImg.onclick = function(){
+        if( onOff) {
+            oImg.src = 'images/2.jpg';
+            onOff=false;
+        }
+        else{
+            oImg.src = 'images/1.jpg';
+            onOff=true;
+        }
+    }
+</script>
+
+</body>
+</html>

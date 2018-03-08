@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素第二种方法</title>
+    <script>
+        window.onload = function(){
+            //document.title = 123;
+            //document.body.innerHTML = 'abc';
+            var aBtn = document.getElementsByTagName('input');//获取一堆元素
+
+
+            document.body.innerHTML= '<input type="button" value="按钮" ><input type="button" value="按钮" ><input type="button" value="按钮" >';
+
+            //alert(aBtn.length);
+            aBtn[0].onclick = function(){
+                alert(1);
+            };
+            aBtn[1].onclick = function(){
+                alert(1);
+            };
+            aBtn[2].onclick = function(){
+                alert(1);
+            };
+            //重复执行某些代码
+            //每次执行，都有一个数字在变
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

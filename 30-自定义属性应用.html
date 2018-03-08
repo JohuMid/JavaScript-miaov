@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性应用</title>
+    <style>
+        li{
+            list-style: none;
+            width: 120px;
+            height: 120px;
+            background: url("images/normal.png");
+            margin-right: 20px;
+            float: left;
+        }
+    </style>
+    <script>
+
+        window.onload = function(){
+            var aLi = document.getElementsByTagName('li');
+            var onOff = true;
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onOff = true;
+                aLi[i].onclick = function() {
+                    //背景和颜色和相对路径不能做判断
+                    if(this.onOff) {
+                        this.style.background = 'url(images/unnormal.png)';
+                        this.onOff=false;
+                    }
+                    else {
+                        this.style.background = 'url(images/normal.png)';
+                        this.onOff = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li onOff = true></li>
+    <li onOff = true></li>
+    <li onOff = true></li>
+</ul>
+</body>
+</html>

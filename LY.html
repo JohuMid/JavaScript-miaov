@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LY</title>
+    <style>
+        body{
+            margin: 0 auto;
+            margin-left: 20%;
+            margin-top: 10%;
+            background: url("../images");
+        }
+        .face{
+            width: 250px;
+            height: 375px;
+            background: #fcfaf2;
+            position:relative;
+            border: 5px solid rgba(0,0,0,0.1);
+            border-radius:3%;
+
+
+        }
+        .face>.textbox{
+            width: 235px;
+            height: 320px;
+            background: #fffffb;
+            border: 1px solid #aaa;
+            position:absolute;
+            margin-top: 7px;
+            left: 7px;
+            border-radius:2%;
+            z-index: 0;
+        }
+        .face>.picture{
+            width: 30px;
+            height: 30px;
+            float: left;
+            position:absolute;
+            left: 7px;
+            bottom: 7px;
+            z-index: 1;
+        }
+        .face>.picture>button{
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+            border-radius:10%;
+            border: 0px solid #000;
+            background-color: #7db9de;
+        }
+        .face>.picture>button>span{
+            width: 30px;
+            height: 30px;
+            line-height:30px;
+            right: 0px;
+            bottom: 0px;
+            position:absolute;
+            box-sizing:border-box;
+
+        }
+        .face>.message{
+            width: 200px;
+            height: 30px;
+            right: 7px;
+            bottom: 7px;
+            position:absolute;
+        }
+        .face>.message>input[id="message"]{
+            width: 140px;
+            height: 24px;
+            border-radius:5%;
+            border: 1.5px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+        }
+        .face>.message>input[id="btn2"]{
+            height: 30px;
+            font-size: 17px;
+            position:absolute;
+            border: 0px solid #787D7B;
+            right: 0;
+            background-color: #bdc0ba;
+            bottom: 0px;
+            border-radius:10%;
+        }
+        #show{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #show{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 50%;
+            width: 350px;
+            height: 200px;
+            margin-left: -195px;
+            margin-top: -120px;
+            background: rgba(0,0,0，0.5);
+            border: 10px solid #fff;
+            padding: 20px;
+            background-color: tomato;
+        }
+        #show1{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #show2{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #show3{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #show3>#box>img{
+            width: 200px;
+        }
+        #show4{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #show5{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        #show5>#box>img{
+            width: 200px;
+        }
+        a{
+            font-size: 20px;
+            display:none;
+            text-align: center;
+            margin-top: -20px;
+            z-index:100;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oTextbox = document.getElementById('textbox');
+            var oP=document.getElementById('p1');
+            var oImg=document.getElementById('img1');
+            var oMessage = document.getElementById('message');
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oSpan = document.getElementById('span1');
+            var oShow = document.getElementById("show");
+            var oBtn_ok = document.getElementById("btn_ok");
+            var oShow1 = document.getElementById("show1");
+            var oBtn_me = document.getElementById("btn_me");
+            var oPicture_yes = document.getElementById("picture_yes");
+            var oPicture_no = document.getElementById("picture_no");
+            var oShow2 = document.getElementById("show2");
+            var oPicture_go = document.getElementById("picture_go");
+            var oShow3 = document.getElementById("show3");
+            var oShow4 = document.getElementById("show4");
+            var oShow5 = document.getElementById("show5");
+            var oPicture_yes1 = document.getElementById("picture_yes1");
+            var oPicture_no1 = document.getElementById("picture_no1");
+            var oPicture_go1 = document.getElementById("picture_go1");
+            var oMaodian = document.getElementById("maodian");
+
+            oBtn2.onclick=function(){
+                if( oMessage.value == ''){
+                    alert('请输入内容');
+                    alert('七夕你想给我说什么呀？');
+                    alert('写在框框里面发出来吧！');
+                }
+                else if(oMessage.value == '我爱你'){
+                    oP.innerHTML=oP.innerHTML + oSpan.innerHTML + ":"+ oMessage.value +'<br/> ';
+
+                    oP.style.background="#fedfe1";
+                    oP.style.margin="5px";
+                    oMessage.value='';
+                    alert('宝宝真聪明（>_<）');
+                    alert('那你能猜到我想对你说什么吗？');
+                    alert('写在框框里面发出来吧！');
+
+                }
+                else if(oMessage.value == '一直就这样可爱'){
+                    oP.innerHTML=oP.innerHTML + oSpan.innerHTML + ":"+ oMessage.value +'<br/> ';
+
+                    oP.style.background="#fedfe1";
+                    oP.style.margin="5px";
+                    oMessage.value='';
+                    alert('果然上了我的贼船久了，连我想说什么都知道');
+                    alert('现在到了提问环节，准备好了哦');
+                    alert('宝宝准备好了就在框框里面写/我准备好了/发出来');
+
+                }
+                else if(oMessage.value == '我准备好了'){
+                    oShow.style.display = "block";
+                }
+                else{
+                    alert('不对哦，开动宝宝的小脑筋再想一想');
+                    oP.innerHTML=oP.innerHTML + oSpan.innerHTML + ":"+ oMessage.value +'<br/> ';
+
+                    oP.style.background="#fedfe1";
+                    oP.style.margin="5px";
+                    oMessage.value='';
+                }
+                //换行输入
+
+            };
+            oBtn1.onclick=function(){
+                oSpan.innerHTML= '蔺悦';
+            };
+            oBtn_ok.onclick=function(){
+                alert('忘了给宝宝说，这是多选而且选了就不能反悔了。。。');
+                oShow1.style.display = "block";
+            };
+            oBtn_me.onclick=function(){
+                alert('我一点也不偏心，宝宝的也是多选！');
+                alert('开始下一个环节呦');
+                alert('想不想知道宝宝最丑的照片是哪一张吗？');
+                oShow2.style.display = "block";
+
+            };
+            oPicture_yes.onclick=function(){
+                alert('真乖，给你看');
+                oShow3.style.display = "block";
+            };
+            oPicture_no.onclick=function(){
+                alert('不看都不行，哈哈哈');
+                oShow3.style.display = "block";
+            };
+            oPicture_go.onclick=function(){
+                alert('想不想知道宝宝最美的照片是哪一张吗？');
+                oShow4.style.display = "block";
+            };
+            oPicture_yes1.onclick=function(){
+                alert('真乖，给你看');
+                oShow5.style.display = "block";
+            };
+            oPicture_no1.onclick=function(){
+                alert('不看都不行，哈哈哈');
+                oShow5.style.display = "block";
+            };
+            oPicture_go1.onclick=function(){
+                oMaodian.style.display = "block";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="face">
+    <div id="textbox" class="textbox"><p id="p1"></p></div>
+    <div class="picture">
+        <button id="btn1">
+            <span id="span1">刘杨</span>
+        </button>
+    </div>
+    <div class="message">
+        <input id="message" type="text">
+        <input id="btn2" type="button" value="send">
+    </div>
+</div>
+<div id="show">
+    <div id="box">
+        <p>你喜欢我的哪一点：
+        <form action=""></form>
+        <input type="radio" value = "帅">帅<br>
+        <input type="radio" value = "身材好">身材好<br>
+        <input type="radio" value = "四块腹肌" checked>四块腹肌<br>
+        </form>
+        </p>
+
+        <p>
+            <button id="btn_ok" class="btn_ok">确定</button>
+        </p>
+    </div>
+</div>
+<div id="show1">
+    <div id="box">
+        <p>我喜欢你的哪一点：
+        <form action=""></form>
+        <input type="radio" value = "漂亮" checked>漂亮<br>
+        <input type="radio" value = "温柔">温柔<br>
+        <input type="radio" value = "全部">全部<br>
+        </form>
+        </p>
+        <p>
+            <button id="btn_me" class="btn_ok">确定</button>
+        </p>
+    </div>
+</div>
+<div id="show2">
+    <div id="box">
+        <p>这次依你，想点哪个就点哪个
+
+        </p>
+        <br><br><br>
+        <p>
+            <button id="picture_yes">看</button>
+            <button id="picture_no">不看</button>
+        </p>
+    </div>
+</div>
+<div id="show3">
+    <div id="box">
+        <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1503973431&di=fddcd247c9409ffd1b5d1ba2afccbd72&src=http://i0.hexunimg.cn/2015-11-15/180575318.jpg" alt="">
+
+        <p>
+            <button id="picture_go">继续</button>
+        </p>
+    </div>
+</div>
+<div id="show4">
+    <div id="box">
+        <p>想不想看啊？
+
+        </p>
+        <br><br><br>
+        <p>
+            <button id="picture_yes1">看</button>
+            <button id="picture_no1">不看</button>
+        </p>
+    </div>
+</div>
+<div id="show5">
+    <div id="box">
+        <img src="http://img0.imgtn.bdimg.com/it/u=3973851827,3631895303&fm=26&gp=0.jpg" alt="">
+
+        <p>
+            <button id="picture_go1">继续</button>
+        </p>
+    </div>
+</div>
+<a href="13-锚点测试.html#bottom" id="maodian">下一章</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初探JavaScript的魅力</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background: #cccccc;
+            border: 1px solid #999;
+            display:none ;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox" onmouseover="document.getElementById('div1').style.display='block';" onmouseout="div1.style.display='none';">
+<div id="div1">
+    为了您的信息安全，请不要在网吧选中此选项
+</div>
+<!--
+1、移到checkbox显示block鼠标移走消失
+document.getElementById('div1')
+用ID获取元素
+解决兼容性问题
+
+希望某个元素移除出你的视线
+display:none;
+
+变量：
+var li=document.getElementById('div1');
+
+2、编写js的流程：
+1.1布局：css+html
+1.2属性：确定要修改那些属性
+1.3事件：确定用户做哪些操作
+1.4编写js：在事件中用js修改页面元素样式
+
+-->
+</body>
+</html>

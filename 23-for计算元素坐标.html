@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算元素坐标</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            var aDiv = document.getElementsByTagName('div');
+
+            for(var i=0;i<100;i++){
+
+                document.body.innerHTML+='<div>'+i+'</div>';
+
+            }
+            for(var i=0;i<aDiv.length;i++){
+                aDiv[i].style.left=10+ i*50+'px';
+
+            }
+            //逢十进一
+
+        }
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

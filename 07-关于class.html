@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于class</title>
+    <style>
+        p{
+            font-size: 15px;
+        }
+        .red{
+            width: 300px;
+            background: red;
+            padding: 20px;
+            color: white;
+            border: 10px solid #cccccc;
+        }
+        .yellow{
+            width: 500px;
+            background: #ffc021;
+            padding: 20px;
+            color: white;
+            border: 10px solid #cccccc;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn1=document.getElementById('btn1');
+            var oBtn2=document.getElementById('btn2');
+            var oP= document.getElementById('p1');
+            var oBtn3= document.getElementById('btn3');
+            var oBtn4= document.getElementById('btn4');
+
+
+            var  num= 15;
+
+            oBtn1.onclick = function(){
+                num +=1;
+                alert('字体'+num+'px');
+                oP.style.fontSize=num + 'px'
+            };
+            oBtn2.onclick = function(){
+                num -=1;
+                alert('字体'+num+'px');
+                oP.style.fontSize=num + 'px'
+            };
+            oBtn3.onclick = function(){
+//                oP.style.width='300px';
+//                oP.style.background='red';
+//                oP.style.padding='20px';
+//                oP.style.color='white';
+//                oP.style.border='10px solid #ccc';
+                //遇到过多的样式，可以放到class之中
+                oP.className='red';
+
+            };
+            oBtn4.onclick = function(){
+                oP.className='yellow';
+                //给p添加class属性
+            }
+        };
+
+    </script>
+</head>
+<body>
+
+<input id="btn1" type="button" value="+">
+<input id="btn2" type="button" value="-">
+<input id="btn3" type="button" value="红">
+<input id="btn4" type="button" value="黄">
+<p id="p1">2000年发行首张个人专辑《Jay》。2001年发行的专辑《范特西》奠定其融合中西方音乐的风格[1]  。2002年举行“The One”世界巡回演唱会[2]  。2003年成为美国《时代周刊》封面人物[3-4]  。2004年获得世界音乐大奖中国区最畅销艺人奖[5]  。2005年凭借动作片《头文字D》获得台湾电影金马奖、香港电影金像奖最佳新人奖[6]  。2006年起连续三年获得世界音乐大奖中国区最畅销艺人奖[7]  。2007年自编自导的文艺片《不能说的秘密》获得台湾电影金马奖年度台湾杰出电影奖[8]  。</p>
+</body>
+</html>

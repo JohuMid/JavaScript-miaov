@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度文库评分</title>
+    <style>
+        .all{
+            width: 400px;
+            height: 50px;
+        }
+        .left{
+            width: 200px;
+            float: left;
+            height: 50px;
+        }
+        .word{
+            width: 60px;
+            height: 40px;
+            margin-top: 5px;
+            float: left;
+            text-align: center;
+            font-size: 12px;
+            line-height: 40px;
+        }
+        .star{
+            width: 140px;
+            height: 40px;
+            float: right;
+            margin-top: 5px;
+        }
+        .star>ul{
+            list-style-type:none;
+            margin-left: -30px;
+            margin-top: 10px;
+        }
+        .star>ul>li{
+            float: left;
+            width: 20%;
+        }
+        .star>ul>li>img{
+            width: 20px;
+        }
+        .right{
+            width: 200px;
+            height: 50px;
+            float: right;
+
+        }
+        .chat{
+            width: 180px;
+            height: 40px;
+            margin-top: 5px;
+            margin-left: 10px;
+            border: 2px solid orange;
+            box-sizing: border-box;
+            border-radius: 10%;
+            line-height: 35px;
+            font-size: 12px;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var aImg=document.getElementsByTagName("img");
+            var oRight=document.getElementById('right');
+
+            for(var i=0 ;i<5;i++){
+                aImg[i].index = i;
+
+                aImg[i].onmouseover = function () {
+
+                    this.src = 'images/stary.png';
+
+                    switch (this.index){
+                        case 0:oRight.innerHTML='很差';break;
+                        case 1:oRight.innerHTML='较差';break;
+                        case 2:oRight.innerHTML='还行';break;
+                        case 3:oRight.innerHTML='推荐';break;
+                        case 4:oRight.innerHTML='力荐';break;
+                    }
+
+                    oRight.style.opacity='0';
+
+                };
+                aImg[i].onmouseout = function () {
+                    this.src = 'images/star.png';
+                    oRight.style.opacity='1';
+
+                }
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+<div class="all">
+    <div class="left">
+        <div class="word">
+            *总体评价:
+
+        </div>
+        <div class="star">
+            <ul>
+                <li><img src="images/star.png" alt=""></li>
+                <li><img src="images/star.png" alt=""></li>
+                <li><img src="images/star.png" alt=""></li>
+                <li><img src="images/star.png" alt=""></li>
+                <li><img src="images/star.png" alt=""></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="right" id="right">
+        <div class="chat">
+            小提示：点击星星就能打分
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

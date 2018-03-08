@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript属性操作</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn1');
+            var oText = document.getElementById('text1');
+            //var oSelect=document.getElementById('select1');
+            var oImg=document.getElementById('img1');
+
+            oBtn.onclick=function(){
+                //alert( oBtn.type );
+                //alert(oText.value);
+                //alert(oSelect.value);
+                alert(oText.value+'在'+oSelect.value);
+            };
+            oBtn.onclick=function() {
+                //oBtn.value = 'button';//修改
+                //oText.value = '按钮';//替换
+                oText.value = oSelect.value; //添加
+            };
+            oBtn.onclick=function() {
+                oImg.src=oText.value;//按照地址访问图片
+            }
+        };
+
+    </script>
+</head>
+<body>
+<!--
+1、html属性操作：读和写
+属性名
+属性值
+
+2、属性读操作：获取、找到
+   元素：属性名称
+
+   属性写操作：（添加）替换，修改
+   元素.属性名称=新的属性
+
+
+3、字符串连接：
+alert(oText.value+'在'+oSelect.value);
+
+点击按钮弹出btn的type
+点击按钮弹出用户输入内容
+-->
+<input id="text1" type="text" >
+<!--<select name="" id="select1">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="西安">西安</option>
+</select>-->
+<input id="btn1" type="button" value="按钮">
+<br>
+<img id="img1" src="images/1.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for套for</title>
+
+    <script>
+
+        var arr = [[1,2,3],[4,5,6],[7,8,9]];
+
+        //arr[1][2]
+
+        for(var i=0;i<arr.length;i++){
+            for(var j=0;j<arr[i].length;j++){
+                //alert(arr[i][j]);
+
+            }
+        }
+
+        window.onload=function(){
+            var oUI = document.getElementById('list');
+            var aUI = oUI.getElementsByTagName('ul');
+            var len = aUI.length;
+            var aLi = null;
+
+            for(var i=0;i<len;i++){
+                aLi=aUI[i].getElementsByTagName('li');
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].style.border='1px solid orange';
+
+                }
+            }
+        };
+        //oDiv.style.cssText='width:200px;height:200px;';
+        //添加样式
+
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <h2>我的好友</h2>
+        <ul>
+            <li>张三</li>
+            <li>李四</li>
+        </ul>
+    </li>
+    <ol>
+        <hr>
+    </ol>
+    <li>
+        <h2>黑名单</h2>
+        <ul>
+            <li>张三</li>
+            <li>李四</li>
+        </ul>
+    </li>
+
+</ul>
+
+</body>
+</html>

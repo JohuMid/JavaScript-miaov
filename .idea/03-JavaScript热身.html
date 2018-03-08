@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript热身</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: none;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn1=document.getElementById('show_btn');
+            var oBtn2=document.getElementById('hide_btn');
+            var oDiv=document.getElementById('div1');
+            var oStrong=document.getElementById('strong1');
+
+            oBtn1.onclick= show;
+            oBtn2.onclick=hidden;
+
+            function show(){
+                oDiv.style.background='red';
+                oDiv.style.display='block';
+                oDiv.style.width='300px';
+                oDiv.style.height='300px';
+                oStrong.style.display='block';
+            }
+            function hidden(){
+                oDiv.style.display='none';
+                oStrong.style.display='none';
+            };
+        };
+
+    </script>
+</head>
+<body>
+<input id="show_btn" type="button" value="显示">
+<input id="hide_btn" type="button" value="隐藏">
+
+<strong id="strong1">我也让div显示</strong>
+<div id="div1"></div>
+
+</body>
+</html>

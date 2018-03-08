@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this的应用</title>
+    <script>
+        window.onload=function() {
+            var aBtn = document.getElementsByTagName('input');
+            var that = null;
+
+            for(var i=0;i<aBtn.length;i++){
+                /*aBtn[i].onclick = function(){
+                    //this.style.background = 'red';
+                    that=this;*/
+                    //先存放，再使用
+                    aBtn[i].onclick = fn1;
+                }
+
+            function fn1(){
+                //this=>window
+                //that
+                this.style.background = 'green';
+
+            }
+
+        };
+
+
+
+//        fn1(this);
+//        function fn1(obj){
+//            obj=>window
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="按钮1">
+<input type="button" value="按钮2">
+<input type="button" value="按钮3">
+
+</body>
+</html>

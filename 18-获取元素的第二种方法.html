@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素的第二种方法</title>
+</head>
+<script>
+//    #list{} var oUI =document.getElementById('list');只招一个元素，静态方法
+
+
+//    #li{} document.getElementsByTagName('li');找一堆元素的集合，动态方法
+//          var aLi = oUI.getElementsByTagName('li');
+//    #list li{}var aLi ==document.
+//    在用TagName的时候，必须加上：[]
+    window.onload= function(){
+        //var oUI = document.getElementById('list');
+        var oUI = document.getElementsByTagName('ul')[0];
+        var aLi = oUI.getElementsByTagName('li');
+
+        document.getElementsByTagName();
+
+        //alert(aLi.length);
+    }
+</script>
+
+<body>
+<!--在用TagName的时候，必须加上：[]-->
+
+<ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<ol>
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+</body>
+</html>
